@@ -1,4 +1,10 @@
 <section class="products-index">
+  
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+      <%= msg %>
+    </div>
+  <% end %>
 
   <header class="page-header">
     <h1>Products</h1>
