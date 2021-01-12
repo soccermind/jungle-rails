@@ -105,7 +105,63 @@ RSpec.describe User, type: :model do
       })
       @user.validate
       expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
-    end
-    
+    end 
   end
+
+  describe '.authenticate_with_credentials' do
+    # examples for this class method here
+    it "should return user object when user credentials are authentic" do
+      @user = User.new({
+        first_name: 'Penny',
+        last_name: 'Pincher',
+        email: 'ppincher@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      })
+      @user.save!
+      expect(User.authenticate_with_credentials(@user.email, @user.password)).to be_truthy
+    end
+
+    it "should return nil when password is invalid" do
+      @user = User.new({
+        first_name: 'Penny',
+        last_name: 'Pincher',
+        email: 'ppincher@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      })
+      @user.save!
+      expect(User.authenticate_with_credentials(@user.email, 'motdepasse')).to be_nil
+    end
+
+    it "should return nil when email does not exists in database" do
+      expect(User.authenticate_with_credentials('non-existent@test.com', 'password')).to be_nil
+    end
+
+    it "should return user object for authentic credentials when email contains leading and/or trailing spaces" do
+      @user = User.new({
+        first_name: 'Penny',
+        last_name: 'Pincher',
+        email: 'ppincher@test.com',
+        password: 'password',
+        password_confirmation: 'password'
+      })
+      @user.save!
+      expect(User.authenticate_with_credentials('   ppincher@test.com  ', @user.password)).to be_truthy
+    end
+
+    it "should return user object for authentic credentials without matching email case" do
+      @user = User.new({
+        first_name: 'Penny',
+        last_name: 'Pincher',
+        email: 'pPincher@test.COM',
+        password: 'password',
+        password_confirmation: 'password'
+      })
+      @user.save!
+      expect(User.authenticate_with_credentials('PpINCHEr@TEST.CoM', @user.password)).to be_truthy
+    end
+
+  end  
+  
 end
