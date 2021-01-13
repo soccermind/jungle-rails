@@ -7,16 +7,16 @@ Admin users can view a Dashboard with general stats, create new products, delete
 
 ## Final Product
 
-| !["Home display"](https://github.com/soccermind/jungle-rails/blob/master/docs/AllProducts.png) |
+!["Home display"](https://github.com/soccermind/jungle-rails/blob/master/docs/AllProducts.png)
 -
 
-| !["My cart"](https://github.com/soccermind/jungle-rails/blob/master/docs/MyCart.png) |
+!["My cart"](https://github.com/soccermind/jungle-rails/blob/master/docs/MyCart.png)
 -
 
-| !["Payment info"](https://github.com/soccermind/jungle-rails/blob/master/docs/PayWithCard.png) |
+!["Payment info"](https://github.com/soccermind/jungle-rails/blob/master/docs/PayWithCard.png)
 -
 
-| !["Order details"](https://github.com/soccermind/jungle-rails/blob/master/docs/OrderDetails.png) |
+!["Order details"](https://github.com/soccermind/jungle-rails/blob/master/docs/OrderDetails.png)
 -
 
 
