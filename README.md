@@ -1,6 +1,15 @@
-# Jungle
+# Jungle Project
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Ruby on Rails by example. Testing was done using RSpec.
+Users can view list of products and filter by category, view product details, add items to cart, view cart, edit item quantity in cart, pay with credit card (using Stripe) and view order details. 
+User can also register with their email and password (optional).
+Admin users can view a Dashboard with general stats, create new products, delete products, and create new categories. Access is restricted using HTTP Basic Authentication. 
+
+## Final Product
+!["Home display"](https://github.com/soccermind/jungle-rails/blob/master/docs/AllProducts.png)
+!["My cart"](https://github.com/soccermind/jungle-rails/blob/master/docs/MyCart.png)
+!["Payment info"](https://github.com/soccermind/jungle-rails/blob/master/docs/PayWithCard.png)
+!["Order details"](https://github.com/soccermind/jungle-rails/blob/master/docs/OrderDetails.png)
 
 
 ## Setup
